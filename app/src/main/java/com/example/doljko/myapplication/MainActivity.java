@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!user.isEmpty()) {
                         User login = dataSnapshot.child(user).getValue(User.class);
 
-                        if (getPassword().equals(pwd))
+                        if (login.getPassword().equals(pwd))
                             Toast.makeText(MainActivity.this, "Login OK!", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setView(sign_up_layout);
         alertDialog.setIcon(R.drawable.ic_account_circle_black_24dp);
 
-        alertDialog.setNavigateButton("NO", new DialogInterface.OnClickListener(){
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener(){
         @Override
         public void onClick(DialogInterface dialogInterface, int i ) {
             dialogInterface.dismiss();
