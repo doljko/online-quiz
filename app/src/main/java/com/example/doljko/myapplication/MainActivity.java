@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!user.isEmpty()) {
                         User login = dataSnapshot.child(user).getValue(User.class);
 
-                        if (login.getPassword().equils(pwd))
+                        if (getPassword().equals(pwd))
                             Toast.makeText(MainActivity.this, "Login OK!", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setMessage("Please fill full information");
 
         LayoutInflater inflater = this.getLayoutInflater();
-        View sign_up_layout = inflater.inflate(R.id.sign_up_layout, null);
+        View sign_up_layout = inflater.inflate(R.layout.sign_up_layout, null);
 
 
         edtNewUser = (MaterialEditText) sign_up_layout.findViewById(R.id.edtNewUserName);
@@ -116,13 +116,12 @@ public class MainActivity extends AppCompatActivity {
         }
     });
 
-        alertDialog.setPositiveButton("YES" new DialogInterface().OnClickListener() {
-
+        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface Object dialogInterface, dialogInterface, int i ) {
+            public void onClick(DialogInterface dialogInterface, int i) {
                 final User user = new User( edtNewUser.getText().toString(),
-                                      edtNewPassword.getText().toString(),
-                                      edtNewEmail.getText().toString());
+                        edtNewPassword.getText().toString(),
+                        edtNewEmail.getText().toString());
 
                 users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -139,16 +138,13 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
                     }
                 });
-                    dialogInterface.dismiss();
+                dialogInterface.dismiss();
+            }
         });
 
                     alertDialog.show();
 
        }
-
-
-    }
-}
+    };
