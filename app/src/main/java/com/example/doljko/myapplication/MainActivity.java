@@ -1,6 +1,7 @@
 package com.example.doljko.myapplication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -71,7 +72,13 @@ public class MainActivity extends AppCompatActivity {
                         User login = dataSnapshot.child(user).getValue(User.class);
 
                         if (login.getPassword().equals(pwd))
-                            Toast.makeText(MainActivity.this, "Login OK!", Toast.LENGTH_SHORT).show();
+
+                        {
+
+                                Intent homeActivity = new Intent(MainActivity.this, HomeActivity.class);
+                                startActivity(homeActivity);
+                                finish();
+                        }
                         else
                             Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
                     } else

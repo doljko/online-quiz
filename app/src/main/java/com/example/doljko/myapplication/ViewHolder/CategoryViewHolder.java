@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.doljko.myapplication.Interface.ItemClickListener;
+import com.example.doljko.myapplication.R;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
