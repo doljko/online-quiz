@@ -8,8 +8,7 @@
     <ImageView
         android:id="@+id/category_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
+        android:layout_height="300dp"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop" />
 
