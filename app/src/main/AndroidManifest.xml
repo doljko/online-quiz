@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".StartActivity" />
+        <activity android:name=".PlayingActivity" />
+        <activity android:name=".DoneActivity"></activity>
     </application>
 
 </manifest>

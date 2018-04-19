@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <android.support.constraint.ConstraintLayout
+    <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -7,15 +7,23 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg"
         tools:context=".MainActivity">
+    <ImageView
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wrap_login"
+        />
 
     <RelativeLayout
+        android:id="@+id/wrap_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_margin="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" >
+
+       >
         <android.support.v7.widget.CardView
             android:id="@+id/info_login"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -87,4 +95,4 @@
     </RelativeLayout>
 
 
-    </android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
