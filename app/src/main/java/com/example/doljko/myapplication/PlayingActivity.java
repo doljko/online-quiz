@@ -42,6 +42,7 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
         txtScore = (TextView)findViewById(R.id.txtScore);
         txtQuestionNum = (TextView)findViewById(R.id.txtTotalQuestion);
         question_text= (TextView)findViewById(R.id.question_type);
+        question_image = (ImageView)findViewById(R.id.question_image);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
@@ -109,13 +110,13 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
                         .load(Common.questionList.get(index).getQuestion())
                         .into(question_image);
                 question_image.setVisibility(View.VISIBLE);
-                question_text.setVisibility(View.VISIBLE);
+                question_text.setVisibility(View.INVISIBLE);
             }
             else
             {
                 question_text.setText(Common.questionList.get(index).getQuestion());
-                question_image.setVisibility(View.VISIBLE);
                 question_image.setVisibility(View.INVISIBLE);
+                question_image.setVisibility(View.VISIBLE);
             }
 
             btnA.setText(Common.questionList.get(index).getAnswerA());

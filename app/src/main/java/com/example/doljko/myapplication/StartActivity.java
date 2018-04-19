@@ -58,7 +58,7 @@ public class StartActivity extends AppCompatActivity {
         if (Common.questionList.size()>0)
             Common.questionList.clear();
 
-        questions.orderByChild("categoryId").equalTo(categoryId)
+        questions.orderByChild("CategoryId").equalTo(categoryId)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
