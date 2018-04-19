@@ -1,7 +1,9 @@
 package com.example.doljko.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.doljko.myapplication.Common.Common;
@@ -31,11 +33,27 @@ public class StartActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("Questions");
         loadQuestion(Common.categoryId);
+
+        btnPlay = (Button)findViewById(R.id.btnPlay);
+
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(StartActivity.this,PlayingActivity.class);
+                startActivities(intent);
+                finish();
+
+            }
+        });
         
         
     }
 
+    private void startActivities(Intent intent) {
+    }
+
     private void loadQuestion(String categoryId) {
+
         // First, clear list if have old question
         if (Common.questionList.size()>0)
             Common.questionList.clear();

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.doljko.myapplication.Common.Common;
 import com.example.doljko.myapplication.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         {
 
                                 Intent homeActivity = new Intent(MainActivity.this, HomeActivity.class);
+                                Common.currentUser= login;
                                 startActivity(homeActivity);
                                 finish();
                         }
