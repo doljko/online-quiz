@@ -4,8 +4,7 @@ public class Question {
 
     private String Question,AnswerA,AnswerB,AnswerC,AnswerD,CorrectAnswer,CategoryId,IsImageQuestion;
 
-    public Question(String question) {
-        Question = question;
+    public Question() {
     }
 
     public Question(String question, String answerA, String answerB, String answerC, String answerD, String correctAnswer, String categoryId, String isImageQuestion) {
