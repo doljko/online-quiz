@@ -19,7 +19,8 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".StartActivity" />
         <activity android:name=".PlayingActivity" />
-        <activity android:name=".DoneActivity"></activity>
+        <activity android:name=".DoneActivity" />
+        <activity android:name=".ScoreDetailActivity"></activity>
     </application>
 
 </manifest>
